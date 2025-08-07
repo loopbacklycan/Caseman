@@ -1,0 +1,44 @@
+-- CreateTable
+CREATE TABLE "Case" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "title" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "status" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+    "suspect" TEXT NOT NULL,
+    "officer" TEXT NOT NULL,
+    "notes" TEXT,
+    "description" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);
+
+-- CreateTable
+CREATE TABLE "Evidence" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "filename" TEXT NOT NULL,
+    "mimetype" TEXT NOT NULL,
+    "url" TEXT NOT NULL,
+    "caseId" INTEGER NOT NULL,
+    "uploadedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Evidence_caseId_fkey" FOREIGN KEY ("caseId") REFERENCES "Case" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "MapNode" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "label" TEXT NOT NULL,
+    "x" INTEGER NOT NULL,
+    "y" INTEGER NOT NULL,
+    "caseId" INTEGER NOT NULL,
+    CONSTRAINT "MapNode_caseId_fkey" FOREIGN KEY ("caseId") REFERENCES "Case" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "MapEdge" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "fromId" INTEGER NOT NULL,
+    "toId" INTEGER NOT NULL,
+    "caseId" INTEGER NOT NULL,
+    CONSTRAINT "MapEdge_caseId_fkey" FOREIGN KEY ("caseId") REFERENCES "Case" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
