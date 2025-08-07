@@ -2,6 +2,12 @@
 
 **Caseman** is a powerful and intuitive case management system built for hackers, professionals, and law enforcement. Whether you're investigating OSINT, SIGINT, HUMINT, cybercrime, trafficking, or missing persons, Caseman helps you organize, track, and collaborate on complex cases from a single streamlined interface.
 
+<p align="center">
+  <img src="https://github.com/0wardriver0/Caseman/blob/main/caseman1.png?raw=true" alt="Caseman Screenshot 1" width="45%" />
+  <img src="https://github.com/0wardriver0/Caseman/blob/main/caseman2.png?raw=true" alt="Caseman Screenshot 2" width="45%" />
+</p>
+
+
 ---
 
 ## 🚀 Features
