@@ -52,7 +52,7 @@
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/0wardriver0/caseman.git
+git clone https://github.com/loopbacklycan/caseman.git
 cd caseman
 
 # 2. Install dependencies
